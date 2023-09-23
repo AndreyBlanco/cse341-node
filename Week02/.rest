@@ -1,0 +1,4 @@
+GET http://localhost:3000 
+
+###
+GET https://week01-t222.onrender.com HTTP/1.1
