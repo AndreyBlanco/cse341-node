@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "650eed94b77be38ed881feb8"
+  },
+  "firstName": "Kyara",
+  "lastName": "Blanco",
+  "email": "kyaranbn@gmail.com",
+  "favoriteColor": "pink",
+  "birthday": "Aug, 29"
+},
+{
+  "_id": {
+    "$oid": "650eed94b77be38ed881feb7"
+  },
+  "firstName": "Nadya",
+  "lastName": "Alán",
+  "email": "nadyalan04@gmail.com",
+  "favoriteColor": "purple",
+  "birthday": "Dec, 04"
+},
+{
+  "_id": {
+    "$oid": "650eed94b77be38ed881feb9"
+  },
+  "firstName": "Vittorio",
+  "lastName": "Murillo",
+  "email": "vittoriomurillo53@gmail.com",
+  "favoriteColor": "black",
+  "birthday": "Nov, 03"
+}]
