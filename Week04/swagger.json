@@ -8,7 +8,7 @@
   "host": "week04-bljq.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
