@@ -1,0 +1,14 @@
+[
+    {
+        "disability":"Dyslexia",
+        "description":"Dyslexia is a language processing disorder that impacts reading, writing, and comprehension. Dyslexics may exhibit difficulty decoding words or with phonemic awareness, identifying individual sounds within words. Dyslexia often goes diagnosed for many years and often results in trouble with reading, grammar, reading comprehension, and other language skills."
+    },
+    {
+        "disability":"Dysgraphia",
+        "description":"Those with dysgraphia have trouble converting their thoughts into writing or drawing. Poor handwriting is a hallmark of dysgraphia but is far from the only symptom. Sufferers struggle to translate their thoughts into writing, whether in spelling, grammar, vocabulary, critical thinking, or memory. Individuals with dysgraphia may exhibit difficulty with letter spacing, poor motor planning and spatial awareness, and trouble thinking and writing simultaneously."
+    },
+    {
+        "disability":"Dyscalculia",
+        "description":"Dyscalculia encompasses learning disabilities related to mathematical calculations. Individuals with dyscalculia struggle with math concepts, numbers, and reasoning. Sometimes referred to as having “math dyslexia,” individuals might have difficulty reading clocks to tell time, counting money, identifying patterns, remembering math facts, and solving mental math."
+    }
+]
