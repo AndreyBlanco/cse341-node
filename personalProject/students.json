@@ -1,44 +1,42 @@
 [
-    {
-        "firstName":"Andrey",
-        "lastName":"Blanco",
-        "age":8,
-        "grade":3,
-        "disabilities":[
-            {
-                "disability":"Dyslexia",
-                "observations":"Confusing b with d. Low reading."
-            }
-        ]
-
-    },
-    {
-        "firstName":"Nadya",
-        "lastName":"Alan",
-        "age":10,
-        "grade":4,
-        "disabilities":[
-            {
-                "disability":"Dyscalculia",
-                "observations":"Difficulty solving math problems."
-            }
-        ]
-
-    },
-    {
-        "firstName":"Amanda",
-        "lastName":"González",
-        "age":9,
-        "grade":4,
-        "disabilities":[
-            {
-                "disability":"Dyslexia",
-                "observations":"Low reading."
-            },
-            {
-                "disability":"Dysgraphia",
-                "observations":"Weakness in the wrist. Poorly defined lines."
-            }
-        ]
-    }
+  {
+    "firstName": "Andrey",
+    "lastName": "Blanco",
+    "age": 8,
+    "grade": 3,
+    "disabilities": [
+      {
+        "disability": "Dyslexia",
+        "observations": "Confusing b with d. Low reading."
+      }
+    ]
+  },
+  {
+    "firstName": "Nadya",
+    "lastName": "Alan",
+    "age": 10,
+    "grade": 4,
+    "disabilities": [
+      {
+        "disability": "Dyscalculia",
+        "observations": "Difficulty solving math problems."
+      }
+    ]
+  },
+  {
+    "firstName": "Amanda",
+    "lastName": "González",
+    "age": 9,
+    "grade": 4,
+    "disabilities": [
+      {
+        "disability": "Dyslexia",
+        "observations": "Low reading."
+      },
+      {
+        "disability": "Dysgraphia",
+        "observations": "Weakness in the wrist. Poorly defined lines."
+      }
+    ]
+  }
 ]
