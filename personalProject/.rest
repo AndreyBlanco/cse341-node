@@ -1,4 +1,4 @@
-GET http://localhost:8080/api-docs
+GET http://localhost:8080/students
 ###
 GET http://localhost:8080/students/652ac2d8cf65d15e1e4b053d HTTP/1.1
 ###
