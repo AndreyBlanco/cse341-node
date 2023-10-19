@@ -13,7 +13,7 @@ app
         res.setHeader('Access-Control-Allow-Origin', '*');
         next();
     })
-    .use((req, res, next) => {
+    /*.use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader(
             'Access-Control-Allow-Headers',
@@ -22,8 +22,12 @@ app
         res.setHeader('Content-Type', 'application/json');
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         next();
-    })
+    })*/
     .use('/', Routes);
+
+process.on('uncaughtException', (err, origin) => {
+    console.log(process.stderr.id, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+});
 
 mongodb.initDb((err) => {
     if (err) {

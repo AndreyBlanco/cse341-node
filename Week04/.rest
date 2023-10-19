@@ -24,7 +24,7 @@ Content-Type: application/json
     "birthday": "Jan, 26"
 } 
 ###
-DELETE http://localhost:8080/contacts/650eed94b77be38ed881feb8 HTTP/1.1
+DELETE http://localhost:8080/contacts/6531aeb12402568cf49b8121 HTTP/1.1
 
 ###
 GET https://week04-bljq.onrender.com/contacts
