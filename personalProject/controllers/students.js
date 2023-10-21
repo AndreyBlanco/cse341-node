@@ -1,21 +1,35 @@
 const ObjectId = require('mongodb').ObjectId;
 const mongodb = require('../db/connect');
 
-const getStudents = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('students').find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+const getStudents = (req, res) => {
+  mongodb
+    .getDb()
+    .db()
+    .collection('students')
+    .find()
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
 };
 
 const getOneStudent = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const result = await await mongodb.getDb().db().collection('students').find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
+  mongodb
+    .getDb()
+    .db()
+    .collection('students')
+    .find({ _id: userId })
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists[0]);
+    });
 };
 
 const addStudent = async (req, res) => {
@@ -67,7 +81,7 @@ const deleteStudent = async (req, res) => {
   if (result3.deletedCount > 0) {
     res.status(200).send(userId + ' was deleted.');
   } else {
-    res.status(500).json(result3.error || 'Error deleting the disability.' + userId);
+    res.status(500).json(result3.error || 'Error deleting the student ' + userId);
   }
 };
 
