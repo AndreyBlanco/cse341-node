@@ -44,7 +44,7 @@ const updateDisability = async (req, res) => {
     .collection('disabilities')
     .replaceOne({ _id: userId }, newInfo);
   if (result2.modifiedCount > 0) {
-    res.status(204).send('Info replaced.');
+    res.status(200).json('Info replaced.');
   } else {
     res.status(500).json(result2.error || 'Error updating the disability info.');
   }
@@ -59,7 +59,7 @@ const deleteDisability = async (req, res) => {
     .collection('disabilities')
     .deleteOne({ _id: userId }, true);
   if (result3.deletedCount > 0) {
-    res.status(200).send(userId + ' was deleted.');
+    res.status(200).json(userId + ' was deleted.');
   } else {
     res.status(500).json(result3.error || 'Error deleting the disability.' + userId);
   }

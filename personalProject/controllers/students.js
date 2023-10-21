@@ -68,7 +68,7 @@ const updateStudent = async (req, res) => {
     .collection('students')
     .replaceOne({ _id: userId }, newInfo);
   if (result2.modifiedCount > 0) {
-    res.status(200).send('Info replaced.');
+    res.status(200).json('Info replaced.');
   } else {
     res.status(500).json(result2.error || 'Error updating the student info.');
   }
@@ -83,7 +83,7 @@ const deleteStudent = async (req, res) => {
     .collection('students')
     .deleteOne({ _id: userId }, true);
   if (result3.deletedCount > 0) {
-    res.status(200).send(userId + ' was deleted.');
+    res.status(200).json(userId + ' was deleted.');
   } else {
     res.status(500).json(result3.error || 'Error deleting the student ' + userId);
   }
