@@ -18,17 +18,21 @@ const getStudents = (req, res) => {
 
 const getOneStudent = async (req, res) => {
   const userId = new ObjectId(req.params.id);
+    
   mongodb
     .getDb()
     .db()
     .collection('students')
     .find({ _id: userId })
     .toArray((err, lists) => {
-      if (err) {
+      if (err)  {
         res.status(400).json({ message: err });
+      } else if (lists[0] == undefined) {
+        res.status(400).json({ message: `Student ${userId} doesn´t exist.` });
+      } else {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists[0]);
       }
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
     });
 };
 
@@ -64,7 +68,7 @@ const updateStudent = async (req, res) => {
     .collection('students')
     .replaceOne({ _id: userId }, newInfo);
   if (result2.modifiedCount > 0) {
-    res.status(204).send('Info replaced.');
+    res.status(200).send('Info replaced.');
   } else {
     res.status(500).json(result2.error || 'Error updating the student info.');
   }
