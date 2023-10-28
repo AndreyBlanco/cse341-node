@@ -133,8 +133,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "412": {
             "description": "Precondition Failed"
@@ -255,8 +255,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "412": {
             "description": "Precondition Failed"
