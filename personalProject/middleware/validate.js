@@ -63,7 +63,7 @@ const saveTeacher = (req, res, next) => {
       if (!status) {
         res.status(412).send({
           success: false,
-          message: 'Validation failed' + req.body.password,
+          message: 'Validation failed',
           data: err
         });
       } else {
@@ -75,7 +75,7 @@ const saveTeacher = (req, res, next) => {
         err.errors["password"]=passError;
         res.status(412).send({
           success: false,
-          message: 'Validation failed' + req.body.password,
+          message: 'Validation failed',
           data: err
         });
       } else {
@@ -89,7 +89,7 @@ const saveTeacher = (req, res, next) => {
         
         res.status(412).send({
           success: false,
-          message: 'Validation failed' + req.body.password,
+          message: 'Validation failed',
           data: terr
         });
       }
@@ -102,7 +102,3 @@ const saveTeacher = (req, res, next) => {
 module.exports = {
   saveStudent, saveDisability, saveTeacher
 };
-
-/*password8: function (val) {
-  return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(val);
-},*/

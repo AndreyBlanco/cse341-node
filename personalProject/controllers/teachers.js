@@ -57,9 +57,8 @@ const updateTeacher = async (req, res) => {
   const newInfo = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    age: req.body.age,
-    grade: req.body.grade,
-    disabilities: req.body.disabilities
+    email: req.body.email,
+    password: req.body.password
   };
   const result2 = await mongodb
     .getDb()
