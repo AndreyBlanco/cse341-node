@@ -311,6 +311,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "password": {
+                  "example": "any"
+                },
                 "firstName": {
                   "example": "any"
                 },
@@ -318,9 +321,6 @@
                   "example": "any"
                 },
                 "email": {
-                  "example": "any"
-                },
-                "password": {
                   "example": "any"
                 }
               }
@@ -378,19 +378,16 @@
             "schema": {
               "type": "object",
               "properties": {
+                "password": {
+                  "example": "any"
+                },
                 "firstName": {
                   "example": "any"
                 },
                 "lastName": {
                   "example": "any"
                 },
-                "age": {
-                  "example": "any"
-                },
-                "grade": {
-                  "example": "any"
-                },
-                "disabilities": {
+                "email": {
                   "example": "any"
                 }
               }
