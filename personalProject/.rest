@@ -8,7 +8,7 @@ Content-Type: application/json
 {
     "firstName": "Josué",
     "lastName": "Blanco",
-    "age": 7,
+    "age": "m",
     "grade": 2,
     "disabilities": [{"disability":"Dysgraphia"},{"observations":"Weakness in the wrist. Poorly defined lines."}]
 }
@@ -62,6 +62,6 @@ Content-Type: application/json
 {
     "firstName": "any",
     "lastName": "any",
-    "email": "any",
-    "password": "any"
+    "email": "anygmail.com",
+    "password": "any123A"
 }
