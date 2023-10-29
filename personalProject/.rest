@@ -60,8 +60,8 @@ POST http://localhost:8080/teachers HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Josué",
-    "lastName": "Blanco",
-    "email": "josueb@gmail.com",
-    "password": "passP4s"
+    "firstName": "any",
+    "lastName": "any",
+    "email": "any",
+    "password": "any"
 }
