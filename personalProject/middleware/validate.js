@@ -46,7 +46,7 @@ const saveTeacher = (req, res, next) => {
     firstName: 'required|string',
     lastName: 'required|string',
     email: 'required|email',
-    password: 'required|password8'
+    /*password: 'required|password8'*/
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
