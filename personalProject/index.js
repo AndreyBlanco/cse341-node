@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const Routes = require('./routes');
 const { auth, requiresAuth } = require('express-openid-connect');
+const myControllers = require('./controllers/students');
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -38,3 +39,5 @@ app.use(auth(config));
 app.get('/', (req, res) => {res.send(req.oidc.isAuthenticated("Login") ? 'Logged in' : 'Logged out');});
 
 app.get('/profile', requiresAuth(), (req, res) =>{res.send(JSON.stringify(req.oidc.user));});
+
+app.get('/students', requiresAuth(), myControllers.getStudents);
