@@ -426,7 +426,7 @@
         }
       }
     },
-    "/login/": {
+    "/login/login/": {
       "get": {
         "description": "",
         "parameters": [],
@@ -437,7 +437,7 @@
         }
       }
     },
-    "/login/profile": {
+    "/login/login/profile": {
       "get": {
         "description": "",
         "parameters": [],
