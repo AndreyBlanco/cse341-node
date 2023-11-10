@@ -1,12 +1,16 @@
+const expresst = require('express');
+const routert = expresst.Router();
+const myControllerst = require('../controllers/teachers');
+const validationt = require('../middleware/validate');
 
-router.get('/', myControllers.getTeachers);
+routert.get('/', myControllerst.getTeachers);
 
-router.get('/:id', myControllers.getOneTeacher);
+routert.get('/:id', myControllerst.getOneTeacher);
 
-router.post('/', validation.saveTeacher, myControllers.addTeacher);
+routert.post('/', validationt.saveTeacher, myControllerst.addTeacher);
 
-router.put('/:id', validation.saveTeacher, myControllers.updateTeacher);
+routert.put('/:id', validationt.saveTeacher, myControllerst.updateTeacher);
 
-router.delete('/:id', myControllers.deleteTeacher);
+routert.delete('/:id', myControllerst.deleteTeacher);
 
-module.exports = router;
+module.exports = routert;

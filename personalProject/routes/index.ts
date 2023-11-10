@@ -1,8 +1,6 @@
 const swagger = require('./swagger');
-const router = express.Router();
-
-const myControllers = require('../controllers/disabilities');
-const validation = require('../middleware/validate');
+const expressi = require('express');
+const router = expressi.Router();
 
 router.use('/', swagger);
 router.use('/students', require('./students'));

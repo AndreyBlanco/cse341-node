@@ -1,11 +1,16 @@
-router.get('/', myControllers.getStudents);
+const expresss = require('express');
+const routers = expresss.Router();
+const myControllers = require('../controllers/students');
+const validations = require('../middleware/validate');
 
-router.get('/:id', myControllers.getOneStudent);
+routers.get('/', myControllers.getStudents);
 
-router.post('/', validation.saveStudent, myControllers.addStudent);
+routers.get('/:id', myControllers.getOneStudent);
 
-router.put('/:id', validation.saveStudent, myControllers.updateStudent);
+routers.post('/', validations.saveStudent, myControllers.addStudent);
 
-router.delete('/:id', myControllers.deleteStudent);
+routers.put('/:id', validations.saveStudent, myControllers.updateStudent);
 
-module.exports = router;
+routers.delete('/:id', myControllers.deleteStudent);
+
+module.exports = routers;

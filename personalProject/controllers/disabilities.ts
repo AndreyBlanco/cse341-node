@@ -1,3 +1,5 @@
+const ObjectIdd = require('mongodb').ObjectId;
+
 const getDisabilities = async (req, res) => {
   const result = await mongodb.getDb().db().collection('disabilities').find();
   result.toArray().then((lists) => {
@@ -7,7 +9,7 @@ const getDisabilities = async (req, res) => {
 };
 
 const getOneDisability = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
+  const userId = new ObjectIdd(req.params.id);
   const result = await await mongodb.getDb().db().collection('disabilities').find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -29,7 +31,7 @@ const addDisability = async (req, res) => {
 };
 
 const updateDisability = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
+  const userId = new ObjectIdd(req.params.id);
 
   const newInfo = {
     disability: req.body.disability,
@@ -48,7 +50,7 @@ const updateDisability = async (req, res) => {
 };
 
 const deleteDisability = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
+  const userId = new ObjectIdd(req.params.id);
 
   const result3 = await mongodb
     .getDb()

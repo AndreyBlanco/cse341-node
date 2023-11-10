@@ -1,11 +1,16 @@
-router.get('/', myControllers.getDisabilities);
+const myControllersd = require('../controllers/disabilities');
+const validationd = require('../middleware/validate');
+const expressd = require('express');
+const routerd = expressd.Router();
 
-router.get('/:id', myControllers.getOneDisability);
+routerd.get('/', myControllersd.getDisabilities);
 
-router.post('/', validation.saveDisability, myControllers.addDisability);
+routerd.get('/:id', myControllersd.getOneDisability);
 
-router.put('/:id', validation.saveDisability, myControllers.updateDisability);
+routerd.post('/', validationd.saveDisability, myControllersd.addDisability);
 
-router.delete('/:id', myControllers.deleteDisability);
+routerd.put('/:id', validationd.saveDisability, myControllersd.updateDisability);
 
-module.exports = router;
+routerd.delete('/:id', myControllersd.deleteDisability);
+
+module.exports = routerd;

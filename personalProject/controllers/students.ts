@@ -1,5 +1,5 @@
 const ObjectId = require('mongodb').ObjectId;
-const mongodbS = require('../db/connect');
+const mongodbS = require('../db/connect.ts');
 
 const getStudents = (req, res) => {
   mongodbS
