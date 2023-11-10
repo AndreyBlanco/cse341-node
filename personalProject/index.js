@@ -16,6 +16,9 @@ app
   })
   .use('/', Routes);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.get('/api-docs', swaggerUi.setup(swaggerDocument));
+
 mongodb.initDb((err) => {
   if (err) {
     console.log(err);
@@ -40,4 +43,4 @@ app.get('/', (req, res) => {res.send(req.oidc.isAuthenticated("Login") ? 'Logged
 
 app.get('/profile', requiresAuth(), (req, res) =>{res.send(JSON.stringify(req.oidc.user));});
 
-app.get('/students', requiresAuth(), myControllers.getStudents);
+app.get('/student', requiresAuth(), myControllers.getStudents);
