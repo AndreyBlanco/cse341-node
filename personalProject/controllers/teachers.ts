@@ -1,7 +1,8 @@
 const ObjectIdT = require('mongodb').ObjectId;
+const mongodbT = require('../db/connect.ts');
 
 const getTeachers = (req, res) => {
-  mongodb
+  mongodbT
     .getDb()
     .db()
     .collection('teachers')
@@ -18,7 +19,7 @@ const getTeachers = (req, res) => {
 const getOneTeacher = async (req, res) => {
   const userId = new ObjectIdT(req.params.id);
     
-  mongodb
+  mongodbT
     .getDb()
     .db()
     .collection('teachers')
@@ -42,7 +43,7 @@ const addTeacher = async (req, res) => {
     email: req.body.email,
     password: req.body.password
   };
-  const result1 = await mongodb.getDb().db().collection('teachers').insertOne(newContact);
+  const result1 = await mongodbT.getDb().db().collection('teachers').insertOne(newContact);
   if (result1.acknowledged) {
     res.status(201).json(result1);
   } else {
@@ -59,7 +60,7 @@ const updateTeacher = async (req, res) => {
     email: req.body.email,
     password: req.body.password
   };
-  const result2 = await mongodb
+  const result2 = await mongodbT
     .getDb()
     .db()
     .collection('teachers')
@@ -74,7 +75,7 @@ const updateTeacher = async (req, res) => {
 const deleteTeacher = async (req, res) => {
   const userId = new ObjectIdT(req.params.id);
 
-  const result3 = await mongodb
+  const result3 = await mongodbT
     .getDb()
     .db()
     .collection('teachers')

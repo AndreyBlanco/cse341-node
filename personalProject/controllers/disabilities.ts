@@ -1,7 +1,8 @@
 const ObjectIdd = require('mongodb').ObjectId;
+const mongodbD = require('../db/connect.ts');
 
 const getDisabilities = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('disabilities').find();
+  const result = await mongodbD.getDb().db().collection('disabilities').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -10,7 +11,7 @@ const getDisabilities = async (req, res) => {
 
 const getOneDisability = async (req, res) => {
   const userId = new ObjectIdd(req.params.id);
-  const result = await await mongodb.getDb().db().collection('disabilities').find({ _id: userId });
+  const result = await await mongodbD.getDb().db().collection('disabilities').find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
@@ -22,7 +23,7 @@ const addDisability = async (req, res) => {
     disability: req.body.disability,
     description: req.body.description
   };
-  const result1 = await mongodb.getDb().db().collection('disabilities').insertOne(newContact);
+  const result1 = await mongodbD.getDb().db().collection('disabilities').insertOne(newContact);
   if (result1.acknowledged) {
     res.status(201).json(result1);
   } else {
@@ -37,7 +38,7 @@ const updateDisability = async (req, res) => {
     disability: req.body.disability,
     description: req.body.description
   };
-  const result2 = await mongodb
+  const result2 = await mongodbD
     .getDb()
     .db()
     .collection('disabilities')
@@ -52,7 +53,7 @@ const updateDisability = async (req, res) => {
 const deleteDisability = async (req, res) => {
   const userId = new ObjectIdd(req.params.id);
 
-  const result3 = await mongodb
+  const result3 = await mongodbD
     .getDb()
     .db()
     .collection('disabilities')

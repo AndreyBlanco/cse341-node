@@ -8,7 +8,7 @@ Content-Type: application/json
 {
     "firstName": "Josué",
     "lastName": "Blanco",
-    "age": "m",
+    "age": 7,
     "grade": 2,
     "disabilities": [{"disability":"Dysgraphia"},{"observations":"Weakness in the wrist. Poorly defined lines."}]
 }

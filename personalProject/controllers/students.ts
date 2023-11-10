@@ -44,7 +44,7 @@ const addStudent = async (req, res) => {
     grade: req.body.grade,
     disabilities: req.body.disabilities
   };
-  const result1 = await mongodb.getDb().db().collection('students').insertOne(newContact);
+  const result1 = await mongodbS.getDb().db().collection('students').insertOne(newContact);
   if (result1.acknowledged) {
     res.status(201).json(result1);
   } else {
@@ -62,7 +62,7 @@ const updateStudent = async (req, res) => {
     grade: req.body.grade,
     disabilities: req.body.disabilities
   };
-  const result2 = await mongodb
+  const result2 = await mongodbS
     .getDb()
     .db()
     .collection('students')
@@ -77,7 +77,7 @@ const updateStudent = async (req, res) => {
 const deleteStudent = async (req, res) => {
   const userId = new ObjectId(req.params.id);
 
-  const result3 = await mongodb
+  const result3 = await mongodbS
     .getDb()
     .db()
     .collection('students')
