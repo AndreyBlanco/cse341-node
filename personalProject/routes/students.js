@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { auth, requiresAuth } = require('express-openid-connect');
 
 const myControllers = require('../controllers/students');
 const validation = require('../middleware/validate');
