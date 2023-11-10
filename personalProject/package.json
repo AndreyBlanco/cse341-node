@@ -2,14 +2,14 @@
   "name": "personalproject",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "nodemon index.ts",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "swagger-autogen": "node ./swagger.js"
+    "swagger-autogen": "node ./swagger.ts"
   },
   "author": "",
   "license": "ISC",
