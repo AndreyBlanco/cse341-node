@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect.ts');
-const Routes = require('./routes/indexs');
+const Routes = require('./routes/indexs.ts');
 const { auth, requiresAuth } = require('express-openid-connect');
 
 const port = process.env.PORT || 8080;
