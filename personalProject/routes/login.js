@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { auth } = require('express-openid-connect');
 
-const chkLogin = auth({
+const config = auth({
     authRequired: false,
     auth0Logout: true,
     secret: process.env.SECRET,
@@ -11,7 +11,7 @@ const chkLogin = auth({
     issuerBaseURL: process.env.ISSUER_BASE_URL,
 });
 
-router.use(auth(chkLogin));
+router.use(auth(config));
 
 router.get('/', (req, res) => {res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');});
 
