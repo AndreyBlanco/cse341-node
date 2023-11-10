@@ -4,14 +4,14 @@ const router = express.Router();
 const myControllers = require('../controllers/students');
 const validation = require('../middleware/validate');
 
-router.get('/', myControllers.getStudents);
+router.get('/', requiresAuth(), myControllers.getStudents);
 
-router.get('/:id', myControllers.getOneStudent);
+router.get('/:id', requiresAuth(), myControllers.getOneStudent);
 
-router.post('/', validation.saveStudent, myControllers.addStudent);
+router.post('/', requiresAuth(), validation.saveStudent, myControllers.addStudent);
 
-router.put('/:id', validation.saveStudent, myControllers.updateStudent);
+router.put('/:id', requiresAuth(), validation.saveStudent, myControllers.updateStudent);
 
-router.delete('/:id', myControllers.deleteStudent);
+router.delete('/:id', requiresAuth(), myControllers.deleteStudent);
 
 module.exports = router;
