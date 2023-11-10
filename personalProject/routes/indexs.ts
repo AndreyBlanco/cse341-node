@@ -1,4 +1,4 @@
-const swagger = require('./swagger');
+const swagger = require('./swagger.ts');
 const expressi = require('express');
 const router = expressi.Router();
 

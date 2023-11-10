@@ -1,4 +1,4 @@
-const validat = require('../helpers/validate');
+const validat = require('../helpers/validate.ts');
 
 const saveStudent = (req, res, next) => {
   const validationRule = {

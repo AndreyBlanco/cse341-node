@@ -1,7 +1,7 @@
 const expresst = require('express');
 const routert = expresst.Router();
-const myControllerst = require('../controllers/teachers');
-const validationt = require('../middleware/validate');
+const myControllerst = require('../controllers/teachers.ts');
+const validationt = require('../middleware/validate.ts');
 
 routert.get('/', myControllerst.getTeachers);
 
