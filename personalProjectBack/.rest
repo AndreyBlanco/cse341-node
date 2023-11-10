@@ -1,0 +1,67 @@
+GET http://localhost:8080/students
+###
+GET http://localhost:8080/students/653406a3f7909dff02f2ff7a HTTP/1.1
+###
+POST http://localhost:8080/students HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Josué",
+    "lastName": "Blanco",
+    "age": "m",
+    "grade": 2,
+    "disabilities": [{"disability":"Dysgraphia"},{"observations":"Weakness in the wrist. Poorly defined lines."}]
+}
+
+###
+PUT http://localhost:8080/students/6534027f0b54a08c4278baf8 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Vito",
+    "lastName": "Murillo",
+    "age": 7,
+    "grade": 2,
+    "disabilities": [{"disability":"Dysgraphia", "observations":"Weakness in the wrist. Poorly defined lines."}]
+} 
+###
+DELETE http://localhost:8080/students/6534027f0b54a08c4278baf8 HTTP/1.1
+
+
+//Disabilities:
+###
+GET http://localhost:8080/disabilities
+###
+GET http://localhost:8080/disabilities/652ac2bfcf65d15e1e4b0539 HTTP/1.1
+###
+POST http://localhost:8080/disabilities HTTP/1.1
+Content-Type: application/json
+
+{
+    "disability": "Dysortographia",
+    "description": "NA"
+}
+###
+PUT http://localhost:8080/disabilities/652ada5f2287e975bd046bc9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "disability": "Dysortographia",
+    "description": "Dysorthography is a specific disorder of spelling which accompanies dyslexia; the cognitive dysfunction underlying the two disorders is probably common to both. In dysorthography, the spelling of words is highly deficient, a direct consequence of the phonological disorder in dyslexic children."
+} 
+###
+DELETE http://localhost:8080/disabilities/652ace171015984f832fd1ae HTTP/1.1
+
+
+###
+GET http://localhost:8080/teachers
+###
+POST http://localhost:8080/teachers HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "any",
+    "lastName": "any",
+    "email": "anygmail.com",
+    "password": "any123A"
+}
