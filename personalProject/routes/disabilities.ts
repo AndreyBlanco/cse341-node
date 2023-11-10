@@ -1,5 +1,5 @@
 const myControllersd = require('../controllers/disabilities.ts');
-const validationd = require('../middleware/validate,ts');
+const validationd = require('../middleware/validate.ts');
 const expressd = require('express');
 const routerd = expressd.Router();
 
