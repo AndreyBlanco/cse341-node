@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const Routes = require('./routes');
 const { auth, requiresAuth } = require('express-openid-connect');
-const myControllers = require('./controllers/students');
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -15,9 +14,6 @@ app
     next();
   })
   .use('/', Routes);
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 mongodb.initDb((err) => {
   if (err) {
@@ -43,4 +39,3 @@ app.get('/', (req, res) => {res.send(req.oidc.isAuthenticated("Login") ? 'Logged
 
 app.get('/profile', requiresAuth(), (req, res) =>{res.send(JSON.stringify(req.oidc.user));});
 
-app.get('/student', requiresAuth(), myControllers.getStudents);

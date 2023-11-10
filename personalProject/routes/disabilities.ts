@@ -1,9 +1,3 @@
-const express = require('express');
-const router = express.Router();
-
-const myControllers = require('../controllers/disabilities');
-const validation = require('../middleware/validate');
-
 router.get('/', myControllers.getDisabilities);
 
 router.get('/:id', myControllers.getOneDisability);

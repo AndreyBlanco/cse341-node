@@ -1,4 +1,4 @@
-const validator = require('../helpers/validate');
+const validat = require('../helpers/validate');
 
 const saveStudent = (req, res, next) => {
   const validationRule = {
@@ -10,7 +10,7 @@ const saveStudent = (req, res, next) => {
     disability: 'string',
     observations: 'string'
   };
-  validator(req.body, validationRule, {}, (err, status) => {
+  validat(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
         success: false,
@@ -28,7 +28,7 @@ const saveDisability = (req, res, next) => {
     disability: 'required|string',
     description: 'required|string'
   };
-  validator(req.body, validationRule, {}, (err, status) => {
+  validat(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
         success: false,
@@ -48,7 +48,7 @@ const saveTeacher = (req, res, next) => {
     email: 'required|email'/*,
     password: 'required|min:8'*/
   };
-  validator(req.body, validationRule, {}, (err, status) => {
+  validat(req.body, validationRule, {}, (err, status) => {
     var passpatt=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     var passStatus = false;
     var passError = [

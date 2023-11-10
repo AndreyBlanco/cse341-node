@@ -1,8 +1,3 @@
-const express = require('express');
-const router = express.Router();
-
-const myControllers = require('../controllers/teachers');
-const validation = require('../middleware/validate');
 
 router.get('/', myControllers.getTeachers);
 

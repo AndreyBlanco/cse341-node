@@ -1,6 +1,3 @@
-const ObjectId = require('mongodb').ObjectId;
-const mongodb = require('../db/connect');
-
 const getDisabilities = async (req, res) => {
   const result = await mongodb.getDb().db().collection('disabilities').find();
   result.toArray().then((lists) => {
