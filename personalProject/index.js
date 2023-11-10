@@ -33,8 +33,8 @@ const config = {
   issuerBaseURL: process.env.ISSUER_BASE_URL,
 };
 
-router.use(auth(config));
+app.use(auth(config));
 
-router.get('/', (req, res) => {res.send(req.oidc.isAuthenticated("Login") ? 'Logged in' : 'Logged out');});
+app.get('/', (req, res) => {res.send(req.oidc.isAuthenticated("Login") ? 'Logged in' : 'Logged out');});
 
-router.get('/profile', requiresAuth(), (req, res) =>{res.send(JSON.stringify(req.oidc.user));});
+app.get('/profile', requiresAuth(), (req, res) =>{res.send(JSON.stringify(req.oidc.user));});
