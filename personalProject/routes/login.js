@@ -13,7 +13,7 @@ const config = {
 
 router.use(auth(config));
 
-router.get('/login', (req, res) => {res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');});
+router.get('/login/login', (req, res) => {res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');});
 
 router.get('/profile', requiresAuth(), (req, res) =>{res.send(JSON.stringify(req.oidc.user));});
 
